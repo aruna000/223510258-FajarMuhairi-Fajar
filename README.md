@@ -1,3 +1,3 @@
-Nama = Fajar Muhairi
-Npm = 223510258
-Kelas = 4D
+nama: fajar muhairi
+npm: 223510258
+kelas: 4D
