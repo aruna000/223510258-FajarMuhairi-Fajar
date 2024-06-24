@@ -1,10 +1,12 @@
 <template>
   <div class="container">
+    <h2>To Do List</h2>
+    <br />
     <form @submit.prevent="emitAddTodo" class="input-field">
       <input
         v-model="localNewTodo"
         required
-        placeholder="new todo"
+        placeholder="New Todo"
         class="input-text"
       />
       <button type="submit" class="todo-button">
@@ -27,19 +29,21 @@
     </ul>
 
     <div class="pending-tasks">
-      <span>{{ remainingTodos }} tasks remaining</span>
-      <button @click="emitClearAllTodos" class="clear-button">Clear All</button>
+      <span>{{ remainingTodos }} tugas yang tersisa</span>
+      <button @click="emitClearAllTodos" class="clear-button">
+        Hapus Semua
+      </button>
     </div>
 
     <button @click="emitToggleHideCompleted" class="toggle-completed">
-      {{ hideCompleted ? "Show all" : "Hide completed" }}
+      {{ hideCompleted ? "Lihat Semua" : "Sembunyikan" }}
     </button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["todos", "newTodo", "hideCompleted", "pesan"],
+  props: ["todos", "newTodo", "hideCompleted"],
   data() {
     return {
       localNewTodo: this.newTodo,
@@ -84,15 +88,11 @@ export default {
 
 <style scoped>
 .container {
-  position: relative;
+  padding: 20px;
+  margin: 20px auto;
   max-width: 480px;
-  width: 100%;
-  border-radius: 8px;
-  padding: 25px;
-  margin: 85px auto 0;
-  background-color: rgba(255, 255, 255, 0.333);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  color: #383737;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
 }
 
 .input-field {
@@ -102,12 +102,13 @@ export default {
 }
 
 .input-text {
-  background: #383737;
+  background: #ffffff;
   flex-grow: 1;
   padding: 10px 15px;
   border: 0px solid #ffffff;
   border-radius: 4px;
   font-size: 16px;
+  color: black;
 }
 
 .todo-button {
@@ -119,7 +120,7 @@ export default {
 
 .note-icon {
   font-size: 24px;
-  color: white;
+  color: #383737;
 }
 
 .todoLists {
@@ -136,6 +137,7 @@ export default {
   border-radius: 3px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .list input[type="checkbox"] {
@@ -144,6 +146,7 @@ export default {
 
 .list .done {
   text-decoration: line-through;
+  color: #555555;
 }
 
 .delete-button {
@@ -160,6 +163,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  color: #383737;
 }
 
 .clear-button {

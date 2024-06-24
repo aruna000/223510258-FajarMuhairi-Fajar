@@ -3,6 +3,7 @@
     <ul>
       <li><button @click="$emit('show-todos')">Todos</button></li>
       <li><button @click="$emit('show-posts')">Post</button></li>
+      <li><button @click="$emit('show-albums')">Albums</button></li>
     </ul>
   </nav>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div class="posts-container">
-    <h2>Fitur Postingan</h2>
+    <h2>Post</h2>
     <select v-model="localSelectedUser" @change="emitUpdateSelectedUser">
-      <option value="" disabled>Select a user</option>
+      <option value="" disabled>Pilih pengguna</option>
       <option v-for="user in users" :key="user.id" :value="user.id">
         {{ user.name }}
       </option>
@@ -16,7 +16,6 @@
     <div v-else>
       <p>Tidak ada postingan untuk pengguna ini.</p>
     </div>
-    <footer-fajar></footer-fajar>
   </div>
 </template>
 
